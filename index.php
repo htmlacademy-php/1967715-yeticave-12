@@ -6,8 +6,6 @@ $user_name = ''; // укажите здесь ваше имя
 // Категории
 $categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
 
-$numbers = 0;
-
 $items = [
     [
         'name' => '2014 Rossingdol District Snowboard',
@@ -84,13 +82,11 @@ $items = [
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
         <ul class="promo__list">
-             <?php $numbers = 0; ?>
-          <?php while($numbers < 6): ?>
+            <?php foreach ($categories as $categorie): ?>
           <li class="promo__item promo__item--boards">
-                <a class="promo__link" href="pages/all-lots.html"><?= $categories[$numbers] ?></a>
+                <a class="promo__link" href="pages/all-lots.html"><?= $categorie ?></a>
             </li>
-          <?php $numbers = $numbers + 1 ?>
-          <?php endwhile; ?>
+            <?php endforeach; ?>
         </ul>
     </section>
     <section class="lots">
@@ -126,13 +122,11 @@ $items = [
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <?php $numbers = 0; ?>
-                <?php while($numbers < 6): ?>
+            <?php foreach ($categories as $categorie): ?>
             <li class="nav__item">
-                <a href="pages/all-lots.html"><?= $categories[$numbers] ?></a>
+                <a href="pages/all-lots.html"><?= $categorie ?></a>
             </li>
-                <?php $numbers = $numbers + 1 ?>
-          <?php endwhile; ?>
+               <?php endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
