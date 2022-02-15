@@ -10,7 +10,7 @@ $items = [
     [
         'name' => '2014 Rossingdol District Snowboard',
         'category' => 'Доски и лыжи',
-        'price' => 10900,
+        'price' => 10999,
         'image' => 'img/lot-1.jpg'
     ],
     [
