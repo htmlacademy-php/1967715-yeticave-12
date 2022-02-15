@@ -58,7 +58,7 @@ function parametr_sum(int $number_price):string
         $thousands_sep
     );
 
-    return $result . '<b class="rub">р</b>';
+    return $result . ' <b class="rub"></b>';
 }
 
 ?>
