@@ -1,6 +1,5 @@
 <?php
 $is_auth = rand(0, 1);
-
 $user_name = ''; // укажите здесь ваше имя
 
 // Категории
@@ -86,9 +85,22 @@ function parametr_sum(int $number_price):string
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
-
-        <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
-
+            <?php if($is_auth): ?>
+                    <div class="user-menu__logged">
+                        <p><?= $user_name ?></p>
+                        <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
+                        <a class="user-menu__logout" href="#">Выход</a>
+                    </div>
+            <?php else: ?>
+                    <ul class="user-menu__list">
+                         <li class="user-menu__item">
+                        <a href="#">Регистрация</a>
+                          </li>
+                         <li class="user-menu__item">
+                          <a href="#">Вход</a>
+                         </li>
+                    </ul>
+             <?php endif; ?>
         </nav>
     </div>
 </header>
@@ -120,7 +132,6 @@ function parametr_sum(int $number_price):string
                     <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?= $item['name'] ?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
-                            <span class="lot__amount">Стартовая цена</span>
                             <span class="lot__cost"><?=parametr_sum($item['price']);?></span>
                         </div>
                         <div class="lot__timer timer">
