@@ -43,6 +43,23 @@ $items = [
         'image' => 'img/lot-6.jpg'
     ],
 ];
+
+function parametr_sum(int $number_price):string
+{
+    $decimals = 0;
+    $dec_point = ".";
+    $thousands_sep = " ";
+
+    $result = number_format(
+        ceil($number_price),
+        $decimals,
+        $dec_points,
+        $thousands_sep
+    );
+
+    return $result . ' <b class="rub"></b>';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -116,7 +133,7 @@ $items = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?= $item['price'] ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=parametr_sum($item['price']);?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
