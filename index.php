@@ -1,5 +1,5 @@
 <?php
-require_once('functions.php');
+require_once('helpers.php');
 require_once('data.php');
 
 // показывать или нет выполненные задачи
@@ -7,7 +7,7 @@ $is_auth = rand(0, 1);
 
 $page_content = include_template('main.php', [
     'categories' => $categories,
-    'items' => $items
+    'lots' => $lots
 ]);
 
 $layout_content = include_template('layout.php', [
@@ -17,5 +17,4 @@ $layout_content = include_template('layout.php', [
     'categories' => $categories,
     'title' => 'Главная страница'
 ]);
-
 print($layout_content);

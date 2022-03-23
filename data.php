@@ -4,7 +4,7 @@ $user_name = 'Азат';
 // Категории
 $categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
 
-$items = [
+$lots = [
     [
         'name' => '2014 Rossingdol District Snowboard',
         'category' => 'Доски и лыжи',
