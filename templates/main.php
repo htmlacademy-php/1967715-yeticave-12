@@ -26,9 +26,15 @@
                         <div class="lot__rate">
                             <span class="lot__cost"><?=formatPrice($lot['price']);?></span>
                         </div>
-                        <div class="lot__timer timer">
-                            12:23
+                        <?php if (get_dt_range($lot['expiration_date'])[0] < 1): ?>
+                        <div class="lot__timer timer--finishing">
+                            <?=implode(':', get_dt_range($lot['expiration_date']));?>
                         </div>
+                        <?php else: ?>
+                        <div class="lot__timer">
+                            <?=implode(':', get_dt_range($lot['expiration_date']));?>
+                        </div>
+                        <?php endif;?>
                     </div>
                 </div>
             </li>

@@ -159,3 +159,13 @@ function formatPrice(int $number_price):string
     return $result . ' <b class="rub"></b>';
 }
 
+
+function get_dt_range($date) {
+    $current_date = strtotime($date);
+    $secs_current_date = $current_date - time();
+
+    $hours = str_pad(floor($secs_current_date / 3600), 2, "0", STR_PAD_LEFT);
+    $minutes = str_pad(floor(($secs_current_date % 3600) / 60), 2, "0", STR_PAD_LEFT);
+
+    return [$hours, $minutes];
+}
